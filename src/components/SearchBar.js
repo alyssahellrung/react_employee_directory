@@ -1,13 +1,14 @@
 import React from "react";
 
-function SearchBar(props) {
+function SearchBar(props) { 
+
   return (
     <form>
       <div className="form-group">
         <input
           style={inputStyle}
           onChange={props.handleInputChange}
-          value={props.value}
+          value={props.search}
           name="search"
           type="text"
           className="form-control"
@@ -16,9 +17,8 @@ function SearchBar(props) {
         />
       </div>
     </form>
-  );
+  )
 }
-
 
 const inputStyle = {
   padding: "6px",
@@ -29,5 +29,6 @@ const inputStyle = {
   marginLeft: "auto",
   fontSize: "17px"
 }
+
 
 export default SearchBar;

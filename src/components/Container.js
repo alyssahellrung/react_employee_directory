@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
-import EmployeeList from "./EmployeeList";
+import EmployeeTable from "./EmployeeTable";
 import axios from "axios";
 // import API from "../utils/API";
 
@@ -12,7 +12,11 @@ class Container extends Component {
 
   componentDidMount() {
     axios.get("https://randomuser.me/api/?results=200&nat=u")
-    .then(res => this.setState({ employees: res.data }));
+    .then(res => this.setState({ results: res.data.results }));
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.results)
   }
 
   // componentDidMount() {
@@ -33,16 +37,22 @@ class Container extends Component {
     });
   };
 
+  handleSort = event => {
+    const sortedResults = this.state.results.sort();
+    console.log(sortedResults);
+  }
 
   render() {
     return (
       <div>
         <Header />
-        <SearchBar
-          search={this.state.search}
-          handleInputChange={this.handleInputChange}
-        />
-        <EmployeeList results={this.state.results} />
+          <SearchBar 
+            search={this.state.search} 
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}/>
+          <EmployeeTable 
+            results={this.state.results}
+            handleSort={this.handleSort} />
       </div>
     );
   }
