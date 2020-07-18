@@ -35,9 +35,9 @@ Navigate to .
 ![image](./public/assets/screenshot.png)  
 
 ## How I Made This      
-I was given a functioning application and asked to make it work offline. Because I was turning this into a progressive web app (PWA), I added a manifest. I also added a db.js file to set up IndexedDB functionality. IndexedDB will now store transactions when the user is offline and then push them to the Mongo database the next time the user is online. I used service workers with a cache API to make this work. I then adjusted index.html and index.js to link everything together and make it fully functional, online and off!
 
-## Application Deployed With Heroku:
+
+## Application Deployed With GitHub Pages  
 https:
 
 ## Link to GitHub Repo    
