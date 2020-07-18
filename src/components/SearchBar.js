@@ -9,7 +9,7 @@ function SearchBar(props) {
           style={inputStyle}
           onChange={props.handleInputChange}
           value={props.value}
-          name="lastname"
+          name="search"
           type="text"
           className="form-control"
           placeholder="Search"
