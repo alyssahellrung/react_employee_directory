@@ -3,7 +3,6 @@ import Header from "./Header";
 import SearchBar from "./SearchBar";
 import EmployeeTable from "./EmployeeTable";
 import axios from "axios";
-// import API from "../utils/API";
 
 class Container extends Component {
   state = {
@@ -19,16 +18,6 @@ class Container extends Component {
     console.log(this.state.results)
   }
 
-  // componentDidMount() {
-  //   this.search();
-  // }
-
-  // search = query => {
-  //   API.search(query)
-  //     .then(res => this.setState({ results: res.data.data }))
-  //     .catch(err => console.log(err));
-  // };
-
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -38,7 +27,10 @@ class Container extends Component {
   };
 
   handleSort = event => {
-    const sortedResults = this.state.results.sort();
+    const sortedResults = this.state.results.sort((a, b) => {
+      return a > b;
+    });
+
     console.log(sortedResults);
   }
 

@@ -1,8 +1,8 @@
 import React from "react";
+import Moment from "moment";
 
 function EmployeeTable(props) {
-  console.log(props);
-  // logic for search
+ 
   return (
     <table className="table table-striped">
       <thead>
@@ -17,14 +17,14 @@ function EmployeeTable(props) {
       </thead>
       <tbody>
         {props.results.map(employee => {
-          console.log(employee);
+          const newDob = Moment(employee.dob.date).format("LL");
           return (
             <tr key={employee.phone}>
               <td><img alt="employee" src={employee.picture.thumbnail}/></td>
               <td>{employee.name.first + " " + employee.name.last}</td>
               <td>{employee.phone}</td>
               <td>{employee.email}</td>
-              <td>{employee.dob.date}</td> 
+              <td>{newDob}</td> 
             </tr>
           )
         })}
