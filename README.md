@@ -23,11 +23,11 @@ HTML
 CSS  
 Bootstrap        
 Javascript        
-Node.js   
-React
-Axios
-Moment.js
-Randomuser.me API  
+Node.js     
+React  
+Axios      
+Moment.js  
+Randomuser.me API    
 
 ## How to Use    
 Navigate to . 
